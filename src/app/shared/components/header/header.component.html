@@ -1,0 +1,17 @@
+<nav>
+    <div class=" container">
+        <div class=" content">
+            <h3 class="logo" *ngIf="isLoggedIn" >Hello</h3>
+            <ul>
+                <li>
+                    <button type="button" class="btn btn-secondary" routerLink="authentication/login" *ngIf="!isLoggedIn"> Login</button>
+                </li>
+                <li routerLink="/Employees" *ngIf="isLoggedIn">Employees</li>
+                <li></li>
+                <li routerLink="/Employees" *ngIf="isLoggedIn">
+                    <button type="button" class="btn btn-secondary" routerLink="authentication/login" (click)="logOut()"> LogOut</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

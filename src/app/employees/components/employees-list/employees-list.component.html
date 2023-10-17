@@ -1,0 +1,27 @@
+<br>
+<button class="btn btn-success" routerLink="/Employees/Add">Add Employee</button>
+
+<table class="table table-striped">
+    <thead >
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Group</th>
+        <th scope="col">View</th>
+        <th scope="col">Update</th>
+        <th scope="col">Attendance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <th scope="row">{{emp.name}}</th>
+        <td>{{emp.group}}</td>
+        <td> <button class="btn btn-success" routerLink="/Employees/{{emp.id}}">View</button> </td>
+        <td> <button class="btn btn-success"  (click)="updateEmployee(emp.id)">Update</button></td>
+        <td> <button class="btn btn-success"   routerLink="/attendance/{{emp.id}}">view Attendances</button></td>
+        <td> <button class="btn btn-success"   routerLink="/attendance/Add/{{emp.id}}">set Attendance</button></td>
+        
+      </tr>
+    </tbody>
+  </table>
+
+
